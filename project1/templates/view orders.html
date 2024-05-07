@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ORDER DATA</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email id</th>
+                <th>Pizza</th>
+                <th>Burger</th>
+                <th>Pasta</th>
+                <th>Fries</th>
+                <th>Sandwich</th>
+                <th>Cold drinks</th>
+                <th>Dessert choice</th>
+                <th>Dessert quantity</th>
+                <th>Delivery Location</th>
+                <th>Order total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.name }}</td>
+                <td>{{ order.email }}</td>
+                <td>{{ order.pizza_quantity }}</td>
+                <td>{{ order.burger_quantity }}</td>
+                <td>{{ order.pasta_quantity }}</td>
+                <td>{{ order.fries_quantity }}</td>
+                <td>{{ order.sandwich_quantity }}</td>
+                <td>{{ order.cold_drinks_quantity }}</td>
+                <td>{{ order.dessert_choice }}</td>
+                <td>{{ order.dessert_quantity}}</td>
+                <td>{{ order.delivery_location }}</td>
+                <td>{{ order.total_price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>

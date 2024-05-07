@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oriano Online Food Delivery</title>
+        <link rel="icon" type="images/png" href="{% static 'Oriano4.png' %}">
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+         <link rel="stylesheet" 
+          href="https://fonts.googleapis.com/css2?family=Avenir&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap">
+
+    <style>
+
+            .header {
+                font-size:larger;
+                font-family:'Montserrat', serif;
+                color:black;
+                background: linear-gradient(to bottom, rgb(248, 252, 252),rgb(95, 158, 210));
+                height:220px;
+                position:relative;
+            }
+
+            .food-menu {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 30px;
+                padding-left:10px;
+            }
+
+            .scrolling-wrapper {
+                display: inline-block;
+            }
+
+            .food-item {
+                display: inline-block;
+                margin-right: 30px;
+                text-align: center;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+
+            .food-item img {
+                width: 330px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            .food-item p {
+                margin-top: 5px;
+                font-size: 16px;
+                color:rgb(128, 0, 6);
+            }
+
+            .footer{
+                color: white;
+                font-family: 'Montserrat', sans-serif;
+                font-size:12px;
+                background: rgb(25, 25, 52);
+            }
+
+
+
+            
+
+            #lower-side {
+    padding: 2em 2em 5em 2em;
+    background: #fff;
+    display: block;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#button2 {
+    position: relative;
+    top: 1.5em;
+    text-decoration: none;
+    background: red;
+    color: #fff;
+    margin: auto;
+    padding: 0.8em 3em;
+    -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    border-radius: 25px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+#button2:hover {
+    -webkit-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    -moz-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+#contBtn {
+    position: relative;
+    top: 0.5em;
+    text-decoration: none;
+    background: #8bc34a;
+    color: #fff;
+    margin: auto;
+    padding: 0.8em 2em;
+    -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+    border-radius: 25px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+#contBtn:hover {
+    -webkit-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    -moz-box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    box-shadow: 0px 15px 30px rgba(60, 60, 60, 0.4);
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+    </style>
+    </head>
+    <body>
+        <div class="header" style="color: rgb(178,34,34);">
+            <img src="{% static 'pizza4.avif' %}"; height="240px"; width="360px";
+            style="position:absolute; top:0px; left:0px">
+            <h1 , style="text-align: justify;  position:absolute; top:20px; left:340px;font-family:'Bungee', cursive;">
+                Welcome to Oriano!!
+            </h1>
+            <p1 style="text-align: justify; position:absolute; color: rgb(71, 0, 77); top:100px; left:360px; font-size: 18px">
+                Discover the World of delicious food, <br>Delivered to you at your doorstep! 
+            </p1>
+            <p2>
+                <a href="http://127.0.0.1:8000/view_orders">
+                    <img src="{% static 'cart3.png' %}", height="80px", width="80px" target="_blank" style="position: absolute; top:0px; right:180px">
+                </a>
+            </p2>
+            <p3 , style="position:absolute; top:30px; right:10px">
+            <a href="http://127.0.0.1:8000/view_orders", id="contBtn"> Go to cart</a>
+            </a>
+            </p3>
+        </div>
+        <div class="ab" style="color:rgba(15, 1, 41, 0.817); font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+            <h2> What would you like to have today? </h2>
+        </div>
+        
+        <div class="food-menu">
+            <div class="scrolling-wrapper">
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'pizza3.jpg' %}" alt="Food 1">
+                    </a>
+                    <p>Oriano's special pizza</p>
+                </div>
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'burger.jpg' %}" alt="Food 2">
+                    </a>
+                    <p>Oriano's special burger</p>
+                </div>
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'fries.jpeg' %}" alt="Food 3">
+                    </a>
+                    <p>Oriano's special fries</p>
+                </div>
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'sandwich.jpg' %}" alt="Food 4">
+                    </a>
+                    <p>Oriano's special sandwich</p>
+                </div>
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'pasta.webp' %}" alt="Food 5">
+                    </a>
+                    <p>Oriano's special white sauce pasta</p>
+                </div>
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'drink.jpeg' %}" alt="Food 6">
+                    </a>
+                    <p>Cold drinks</p>
+                </div>
+                <div class="food-item">
+                    <a href="#">
+                        <img src="{% static 'dessert.png' %}" alt="Food 7">
+                    </a>
+                    <p>Oriano's special desserts</p>
+                </div>   
+            </div>
+        </div>
+        <div id="lower-side">
+            <a href="http://127.0.0.1:8000/order" id="button2", style="font-family: 'Montserrat';"> ORDER NOW</a>
+        </div>
+
+    </body>
+</html>
+            
+    

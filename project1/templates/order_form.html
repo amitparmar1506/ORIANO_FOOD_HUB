@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Order Form</title>
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Place Your Food Order</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Place Order">
+    </form>
+    <script>
+        
+        const form = document.querySelector('form');
+        const pizzaQuantity = document.getElementById('id_pizza_quantity');
+        const burgerQuantity = document.getElementById('id_burger_quantity');
+        const pastaQuantity = document.getElementById('id_pasta_quantity');
+        const friesQuantity = document.getElementById('id_fries_quantity');
+        const coldDrinksQuantity = document.getElementById('id_cold_drinks_quantity');
+        const sandwichQuantity = document.getElementById('id_sandwich_quantity');
+        const dessertQuantity = document.getElementById('id_dessert_quantity');
+        const dessertChoice = document.getElementById('id_dessert_choice');
+        const totalField = document.getElementById('id_total_price');
+        
+        
+        
+        function calculateTotalPrice() {
+            const pizzaPrice = 99.00;
+            const burgerPrice =119.00;
+            const pastaPrice = 119.00;
+            const friesPrice = 89.00;
+            const coldDrinksPrice = 50.00;
+            const sandwichPrice = 79.00;
+            const dessertPrice = 99.00;
+        
+            let total = 0;
+            total += parseInt(pizzaQuantity.value) * pizzaPrice;
+            total += parseInt(burgerQuantity.value) * burgerPrice;
+            total += parseInt(pastaQuantity.value) * pastaPrice;
+            total += parseInt(friesQuantity.value) * friesPrice;
+            total += parseInt(coldDrinksQuantity.value) * coldDrinksPrice;
+            total += parseInt(sandwichQuantity.value) * sandwichPrice;
+            if (dessertChoice.value !== '') {
+                total += parseInt(dessertQuantity.value) * dessertPrice;
+            }
+            totalField.value = total.toFixed(2);
+        }
+        
+        // Event listener for quantity inputs
+        form.addEventListener('input', calculateTotalPrice);
+        
+            </script>
+
+</body>
+</html>
